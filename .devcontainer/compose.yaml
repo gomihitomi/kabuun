@@ -1,0 +1,12 @@
+services:
+  dev:
+    container_name: dev
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    user: bun
+    command: "/bin/bash"
+    tty: true
+    restart: always
+    volumes:
+      - ..:/workspace:cached

@@ -1,0 +1,19 @@
+{
+  "name": "kabuun",
+  "dockerComposeFile": "compose.yaml",
+  "service": "dev",
+  "remoteUser": "bun",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oven.bun-vscode",
+        "biomejs.biome",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        "medo64.render-crlf"
+      ]
+    }
+  }
+}
