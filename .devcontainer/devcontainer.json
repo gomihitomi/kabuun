@@ -2,7 +2,7 @@
   "name": "kabuun",
   "dockerComposeFile": "compose.yaml",
   "service": "dev",
-  "remoteUser": "bun",
+  "remoteUser": "node",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
