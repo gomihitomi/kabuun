@@ -48,4 +48,10 @@ RUN curl -fsSL https://bun.sh/install | bash
 RUN mv /root/.bun/bin/bun /usr/local/bin/
 RUN chmod a+x /usr/local/bin/bun
 
+#エイリアス
+RUN cat <<EOF >> /home/$USERNAME/.bashrc
+alias ll='ls -la'
+alias bunx='bun x'
+EOF
+
 USER $USERNAME
