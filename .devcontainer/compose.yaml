@@ -3,9 +3,28 @@ services:
     container_name: dev
     build:
       context: ..
-      dockerfile: .devcontainer/Dockerfile
+      dockerfile: .devcontainer/dev.Dockerfile
     command: "/bin/bash"
     tty: true
     restart: always
     volumes:
       - ..:/workspace:cached
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    build:
+      context: ..
+      dockerfile: .devcontainer/db.Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: kabuun
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+
+volumes:
+  db_data:
